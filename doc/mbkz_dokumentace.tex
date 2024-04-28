@@ -1,0 +1,123 @@
+% @out_file dokumentace.tex
+% @author Štěpán Faragula
+% @brief Dokumentace semestrální práce z předmětu KIV/MBKZ.
+% @version 1.0
+% @date 2024-05-01
+
+% Document
+\documentclass[12pt]{report}
+
+% Čeština
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[czech]{babel}
+
+% Formát dokumentu
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{textcomp}
+\usepackage{xspace}
+\usepackage{parskip}
+\usepackage[hidelinks]{hyperref}
+
+% Graphics
+\usepackage{graphicx}
+\graphicspath{{img/}}
+\usepackage{fancyvrb}
+\usepackage[
+left=30mm, 
+right=30mm, 
+top=30mm, 
+bottom=30mm,
+]{geometry}
+
+% Vychytávky
+\usepackage{lipsum}								% Lorem impsum
+\usepackage{pdflscape}							% Landscape
+\usepackage{menukeys}							% Klavesy
+\usepackage{algorithm}							% Algoritmus
+\usepackage[noend]{algpseudocode}				% Pseudokod
+\usepackage{dirtree}							% Adresarova struktura
+												% Tabulky pomoci https://www.tablesgenerator.com/
+
+\newcommand\indentt[1]{						
+	\setlength\parindent{5mm}
+	#1
+	\setlength\parindent{0mm}
+}	
+
+
+% ---------------------	
+% Begin
+% ---------------------	
+\begin{document}
+
+
+	% ---------------------		
+	% Titulní strana
+	% ---------------------	
+	\begin{titlepage}
+		\centering
+		\Large
+		
+		\includegraphics[width=.7\textwidth]{fav}
+		
+		\vspace{15mm}
+		{\Huge\bfseries Procvičování matematiky}
+
+		\vspace{5mm}
+		{\LARGE Katedra informatiky a výpočetní techniky}
+		{\LARGE Semestrální práce z předmětu KIV/MBKZ}
+		
+		\vfill
+		\raggedright
+		Štěpán Faragula\\
+		A21B0119P\\
+		farag844@students.zcu.cz
+		\hfill 
+		\today
+	\end{titlepage}
+
+	
+	% ---------------------	
+	% Obsah
+	% ---------------------	
+	\tableofcontents
+
+
+	% ---------------------	
+	% Zadání	
+	% ---------------------	
+	\chapter{Zadání}		
+	https://fontawesome.com/download
+
+	% ---------------------			
+	% Programátorská dokumentace
+	% ---------------------	
+	\chapter{Programátorská dokumentace}
+
+
+	% ---------------------	
+	% Uživatelská dokumentace
+	% ---------------------	
+	\chapter{Uživatelská dokumentace}
+
+
+	% ---------------------	
+	% Řešené problémy
+	% ---------------------	
+	\chapter{Řešené problémy}
+
+
+	% ---------------------	
+	% Testování
+	% ---------------------	
+	\chapter{Testování}
+	
+
+	% ---------------------	
+	% Závěr
+	% ---------------------	
+	\chapter{Závěr}
+	
+\end{document}

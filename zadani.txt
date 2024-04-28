@@ -1,0 +1,35 @@
+------------------------
+| Matematická aplikace |
+------------------------
+
+soubor několika matematických "her"
+limit si volí sám uživatel (sčítání/odčítání chce do 100, násobení/dělení do 20)
+uvažují se celá čísla (nanejvýš, uživatel může sám zvolit jestli nechce raději přirozená)
+
+1) jaký je výsledek X (nebo jaké X dá konkrétní výsledek)
+	- uživatel musí počítat příklady v časovém limitu
+	- procvičení operací + - * /
+	- hra končí když se uživatel zmýlí
+	- varianty příkladu:
+		- s jednou operací
+			10 + X = 5
+			7 - 8 = X
+			-15 / (-5) = X
+		- s více operacemi
+			X / 8 + 4 - 1 = 3
+	- varianty zadávání:
+		- uživatel musí do časového limitu zvolit 1 správnou odpověď ze 4 nabízených
+		- odpověď není v nabídce, ale musí ji uživatel ručně napsat sám
+	- varianty časovače:
+		- u každého příkladu běží časovač který se resetuje po uhádnutí výsledku
+		- časovač se neresetuje, po každém vypočítaném příkladu se přidá vteřina
+
+2) sčítání/odčítání zlomků
+	1/3 + 4/8 = X/Y
+
+3) postupné operace
+	- hráči je zobrazeno číslo a postupně se objevují a mizí operace které se mají vykonat
+	- na konci musí uživatel napsat správný výsledek (něco jako Simon says)
+
+4) složení sumy
+	- dána výsledná suma, uživatel musí naklikat
