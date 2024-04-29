@@ -13,6 +13,7 @@
         android:layout_marginStart="76dp"
         android:layout_marginTop="44dp"
         android:onClick="guess"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ans1" />
 
@@ -23,6 +24,7 @@
         android:layout_marginStart="76dp"
         android:layout_marginTop="664dp"
         android:onClick="guess"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,10 +33,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="396dp"
         android:onClick="guess"
+        android:textSize="25sp"
         app:layout_constraintStart_toEndOf="@+id/ans1"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintTop_toBottomOf="@+id/math" />
 
     <Button
         android:id="@+id/ans4"
@@ -43,6 +46,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="40dp"
         android:onClick="guess"
+        android:textSize="25sp"
         app:layout_constraintStart_toEndOf="@+id/ans3"
         app:layout_constraintTop_toBottomOf="@+id/ans2" />
 
@@ -50,23 +54,12 @@
         android:id="@+id/math"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="212dp"
         android:textAlignment="center"
-        android:textSize="34sp"
+        android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="157dp"
-        android:layout_marginTop="108dp"
-        android:onClick="generateMathProblem"
-        android:text="Generate"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/math" />
 
     <TextView
         android:id="@+id/example"
