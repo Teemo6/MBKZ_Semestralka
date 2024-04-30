@@ -10,4 +10,5 @@
         <item name="android:textColorSecondaryInverse">@color/white</item>
         <item name="android:textColorTertiaryInverse">@color/white</item>
     </style>
+
 </resources>

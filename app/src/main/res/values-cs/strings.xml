@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Procvičování matematiky</string>
+    <string name="app_name">Matematika</string>
 
     <!-- Menu -->
     <string name="menu_title">Procvičování matematiky</string>
-    <string name="menu_start">Spustit</string>
+    <string name="menu_start">Začít</string>
     <string name="menu_challenge">Výzva</string>
     <string name="menu_settings">Nastavení</string>
     <string name="menu_about">O aplikaci</string>
@@ -15,7 +15,7 @@
 
     <string name="dialog_final_title">Konec</string>
     <string name="dialog_final_text1">Počet příkladů:</string>
-    <string name="dialog_final_text2">Špatných pokusů:</string>
+    <string name="dialog_final_text2">Špatných odpovědí:</string>
 
     <string name="dialog_return_title">Návrat do menu</string>
     <string name="dialog_return_text">Opravdu se chcete vrátit do menu?</string>
@@ -49,8 +49,19 @@
         <item>Angličtina (EN)</item>
         <item>Čeština (CZ)</item>
     </string-array>
+
     <string name="settings_position">Pozice otazníku</string>
+    <string name="settings_operations">Povolené operace</string>
+    <string name="settings_range_1">Rozsah +, -</string>
+    <string name="settings_range_2">Rozsah *, /</string>
+    <string name="settings_range_min">min</string>
+    <string name="settings_range_max">max</string>
+    <string name="settings_count">Počet příkladů</string>
 
     <string name="settings_save">Uložit preference</string>
     <string name="settings_default">Výchozí hodnoty</string>
+
+    <!-- About -->
+    <string name="about_name">Štěpán Faragula, 2024</string>
+    <string name="about_project">Semestrální práce KIV/MBKZ</string>
 </resources>

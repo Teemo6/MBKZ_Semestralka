@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Math exercises</string>
+    <string name="app_name">Math</string>
 
     <!-- Menu -->
     <string name="menu_title">Math exercises</string>
@@ -49,8 +49,19 @@
         <item>English (EN)</item>
         <item>Czech (CZ)</item>
     </string-array>
+
     <string name="settings_position">Question mark position</string>
+    <string name="settings_operations">Allowed operations</string>
+    <string name="settings_range_1">+, - range</string>
+    <string name="settings_range_2">*, / range</string>
+    <string name="settings_range_min">min</string>
+    <string name="settings_range_max">max</string>
+    <string name="settings_count">Problem count</string>
 
     <string name="settings_save">Save preferences</string>
     <string name="settings_default">Default values</string>
+
+    <!-- About -->
+    <string name="about_name">Štěpán Faragula, 2024</string>
+    <string name="about_project">Seminar work KIV/MBKZ</string>
 </resources>

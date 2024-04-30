@@ -3,8 +3,6 @@ package com.example.mbkz_semestralka
 import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
@@ -36,16 +34,17 @@ class Challenge : AppCompatActivity() {
         LOST = false
 
         // Start generating math problems
-        this.generateMathProblem()
+        generateMathProblem()
     }
 
     fun generateMathProblem(){
-        var operator = ""
+        // Reset variables
         var num1 = -1
         var num2 = -1
         var ans = Int.MAX_VALUE
 
-        operator = OPERATORS[Random.nextInt(OPERATORS.size)]
+        // Generate new problem
+        val operator = OPERATORS[Random.nextInt(OPERATORS.size)]
         if (operator == "+"){
             ans = Random.nextInt(MIN_EZ + 2, MAX_EZ)
             num1 = Random.nextInt(MIN_EZ, ans)
@@ -74,9 +73,6 @@ class Challenge : AppCompatActivity() {
         // DEBUG
         val example: TextView = findViewById(R.id.example)
         example.text = String.format("%s %s %s = %s", problem_str[0], operator, problem_str[1], problem_str[2])
-
-        val answer: TextView = findViewById(R.id.answer)
-        answer.text = ""
         // DEBUG
 
         // TextView show
@@ -105,21 +101,21 @@ class Challenge : AppCompatActivity() {
         if (answer.text.toString() == "$SOLUTION" && !LOST){
             SCORE++
             answer.text.clear()
-            this.generateMathProblem()
+            generateMathProblem()
         } else {
             LOST = true
-            this.finalDialog()
+            finalDialog()
         }
     }
 
     override fun onBackPressed() {
         AlertDialog.Builder(this)
-            .setTitle(this.resources.getString(R.string.dialog_return_title))
-            .setMessage(this.resources.getString(R.string.dialog_return_text))
+            .setTitle(resources.getString(R.string.dialog_return_title))
+            .setMessage(resources.getString(R.string.dialog_return_text))
             .setPositiveButton(resources.getString(R.string.dialog_yes)) { _, _ ->
                 super.onBackPressed()
             }
-            .setNegativeButton(this.resources.getString(R.string.dialog_no)) { dialog, _ ->
+            .setNegativeButton(resources.getString(R.string.dialog_no)) { dialog, _ ->
                 dialog.dismiss()
             }
             .show()
@@ -128,22 +124,22 @@ class Challenge : AppCompatActivity() {
     fun finalDialog(){
         val result: String
         if (SCORE <= SCORE1){
-            result = this.resources.getString(R.string.score_1)
+            result = resources.getString(R.string.score_1)
         } else if (SCORE <= SCORE2){
-            result = this.resources.getString(R.string.score_2)
+            result = resources.getString(R.string.score_2)
         } else if (SCORE <= SCORE3){
-            result = this.resources.getString(R.string.score_3)
+            result = resources.getString(R.string.score_3)
         } else if (SCORE <= SCORE4){
-            result = this.resources.getString(R.string.score_4)
+            result = resources.getString(R.string.score_4)
         } else {
-            result = this.resources.getString(R.string.score_5)
+            result = resources.getString(R.string.score_5)
         }
 
         AlertDialog.Builder(this)
-            .setTitle(this.resources.getString(R.string.dialog_final_title))
+            .setTitle(resources.getString(R.string.dialog_final_title))
             .setMessage(
-                String.format("%s %d\n%s", this.resources.getString(R.string.score_result), SCORE, result))
-            .setPositiveButton(resources.getString(R.string.dialog_ok)) { dialog, _ ->
+                String.format("%s %d\n%s", resources.getString(R.string.score_result), SCORE, result))
+            .setPositiveButton(resources.getString(R.string.dialog_ok)) { _, _ ->
                 super.onBackPressed()
             }
             .show()

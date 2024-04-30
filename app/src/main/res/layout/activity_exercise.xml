@@ -8,14 +8,14 @@
     tools:context=".Exercise">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_horizontal_1"
+        android:id="@+id/guideline_horizontal_05"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_horizontal_2"
+        android:id="@+id/guideline_horizontal_15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -82,6 +82,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:onClick="guess"
+        android:textColor="@color/white"
         android:textSize="40sp"
         app:cornerRadius="5dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_85"
@@ -94,6 +95,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:onClick="guess"
+        android:textColor="@color/white"
         android:textSize="40sp"
         app:cornerRadius="5dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_85"
@@ -106,6 +108,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:onClick="guess"
+        android:textColor="@color/white"
         android:textSize="40sp"
         app:cornerRadius="5dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_95"
@@ -118,6 +121,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:onClick="guess"
+        android:textColor="@color/white"
         android:textSize="40sp"
         app:cornerRadius="5dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_95"
@@ -133,7 +137,7 @@
         android:textSize="55sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_95"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_2" />
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_15" />
 
     <TextView
         android:id="@+id/example"
@@ -141,19 +145,9 @@
         android:layout_height="wrap_content"
         android:width="150dp"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_2"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_5"
-        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05" />
-
-    <TextView
-        android:id="@+id/answer"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:width="150dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_15"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_95"
-        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_5" />
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05" />
 
     <TextView
         android:id="@+id/problem"
@@ -163,7 +157,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_5"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_1" />
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_05" />
 
     <TextView
         android:id="@+id/score"
@@ -173,6 +167,6 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_95"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_5"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_1" />
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_05" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
