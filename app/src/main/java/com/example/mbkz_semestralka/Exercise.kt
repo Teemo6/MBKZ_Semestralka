@@ -1,5 +1,6 @@
 package com.example.mbkz_semestralka
 
+import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -9,14 +10,14 @@ import android.widget.Button
 import android.widget.TextView
 import kotlin.random.Random
 
-class MainActivity : AppCompatActivity() {
+class Exercise : AppCompatActivity() {
     val OPERATORS = arrayOf("+", "-")
     var SOLUTION = -1
     var LOADING = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_exercise)
 
         this.generateMathProblem()
     }
@@ -119,5 +120,19 @@ class MainActivity : AppCompatActivity() {
             answer.text = String.format("Not correct: %s", guess.text)
             guess.setBackgroundColor(resources.getColor(R.color.answerWrong))
         }
+    }
+
+    override fun onBackPressed() {
+        AlertDialog.Builder(this)
+            .setTitle("Návrat do menu")
+            .setMessage("Opravdu se chcete vrátit do menu?")
+            .setPositiveButton("Ano") { dialog, _ ->
+                // Perform any necessary cleanup or exit actions
+                super.onBackPressed()
+            }
+            .setNegativeButton("Ne") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
     }
 }

@@ -2,7 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
     <color name="colorPrimary">#4798D6</color>
+
     <color name="answerCorrect">#42CC10</color>
     <color name="answerWrong">#C81313</color>
 </resources>
