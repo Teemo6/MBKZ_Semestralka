@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MBKZ_Semestralka</string>
+
+    <string name="start">Spustit</string>
+    <string name="rules">Pravidla</string>
+    <string name="settings">Nastavení</string>
+    <string name="main_title">Procvičování matematiky</string>
 </resources>
