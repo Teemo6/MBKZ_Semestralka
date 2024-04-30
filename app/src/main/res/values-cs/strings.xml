@@ -9,10 +9,19 @@
     <string name="menu_settings">Nastavení</string>
 
     <!-- Exercise -->
-    <string name="dialog_title">Návrat do menu</string>
-    <string name="dialog_text">Opravdu se chcete vrátit do menu?</string>
+    <string name="problem_counter">Příklad:</string>
+    <string name="wrong_counter">Špatně:</string>
+
+    <string name="dialog_final_title">Konec</string>
+    <string name="dialog_final_text1">Počet příkladů:</string>
+    <string name="dialog_final_text2">Špatných pokusů:</string>
+
+    <string name="dialog_return_title">Návrat do menu</string>
+    <string name="dialog_return_text">Opravdu se chcete vrátit do menu?</string>
+
     <string name="dialog_yes">Ano</string>
     <string name="dialog_no">Ne</string>
+    <string name="dialog_ok">Ok</string>
 
     <!-- Settings -->
     <string name="settings_theme">Barevné provedení</string>

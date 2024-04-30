@@ -136,21 +136,42 @@
 
     <TextView
         android:id="@+id/example"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:width="150dp"
         android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05" />
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:width="150dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_95"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_5" />
+
+    <TextView
+        android:id="@+id/problem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_5"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
         app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_1" />
 
     <TextView
-        android:id="@+id/answer"
-        android:layout_width="wrap_content"
+        android:id="@+id/wrong"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:width="150dp"
         android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_95"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_5"
         app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

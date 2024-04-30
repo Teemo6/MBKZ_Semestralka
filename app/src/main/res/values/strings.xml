@@ -9,10 +9,19 @@
     <string name="menu_settings">Settings</string>
 
     <!-- Exercise -->
-    <string name="dialog_title">Return to the menu</string>
-    <string name="dialog_text">Do you really wish to return to the menu?</string>
+    <string name="problem_counter">Problem:</string>
+    <string name="wrong_counter">Wrong:</string>
+
+    <string name="dialog_final_title">Exercise over</string>
+    <string name="dialog_final_text1">Problem count:</string>
+    <string name="dialog_final_text2">Wrong guesses:</string>
+
+    <string name="dialog_return_title">Return to the menu</string>
+    <string name="dialog_return_text">Do you really wish to return to the menu?</string>
+
     <string name="dialog_yes">Yes</string>
     <string name="dialog_no">No</string>
+    <string name="dialog_ok">OK</string>
 
     <!-- Settings -->
     <string name="settings_theme">Theme</string>

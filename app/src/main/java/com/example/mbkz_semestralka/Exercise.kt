@@ -11,22 +11,32 @@ import android.widget.TextView
 import kotlin.random.Random
 
 class Exercise : AppCompatActivity() {
-    val OPERATORS = arrayOf("+", "-")
+    val OPERATORS = arrayOf("+", "-")   // PARA
+    val TOTAL = 5                       // PARA
+    val MIN_EZ = -50                    // PARA
+    val MAX_EZ = 50                     // PARA
+    val MIN_HARD = 10                   // PARA
+    val MAX_HARD = 10                   // PARA
+
     var SOLUTION = -1
-    var LOADING = false
+    var ANIMATION = false
+    var PROBLEM = 0
+    var WRONG = 0
+    var WRONG_GUESS = arrayOf(false, false, false ,false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exercise)
 
+        // Setup wrong counter
+        val wrongCounter: TextView = findViewById(R.id.wrong)
+        wrongCounter.text = String.format("%s %d", resources.getString(R.string.wrong_counter), 0)
+
+        // Start generating math problems
         this.generateMathProblem()
     }
 
     fun generateMathProblem(){
-        val MIN_EZ = -50            // PARA 1
-        val MAX_EZ = 50             // PARA 2
-        val MAX_HARD = 10
-
         var operator = ""
         var num1 = -1
         var num2 = -1
@@ -64,6 +74,7 @@ class Exercise : AppCompatActivity() {
 
         val answer: TextView = findViewById(R.id.answer)
         answer.text = ""
+        // DEBUG
 
         // TextView show
         val position = Random.nextInt(0, 3)
@@ -98,39 +109,86 @@ class Exercise : AppCompatActivity() {
         ans3.setBackgroundColor(resources.getColor(R.color.colorPrimary))
         ans4.setBackgroundColor(resources.getColor(R.color.colorPrimary))
 
-        LOADING = false
+        ANIMATION = false
+
+        // Show problem count
+        PROBLEM++
+        val problemCounter: TextView = findViewById(R.id.problem)
+        problemCounter.text = String.format("%s %d/%d", this.resources.getString(R.string.problem_counter), PROBLEM, TOTAL)
+
     }
 
     fun guess(v: View){
-        val guess = v as Button
-
-        if (LOADING){
+        // Animation timer
+        if (ANIMATION){
             return
         }
 
+        val guess: Button = v as Button
         val answer: TextView = findViewById(R.id.answer)
+        val wrongCounter: TextView = findViewById(R.id.wrong)
+
         if (guess.text == "$SOLUTION"){
+            // DEBUG
             answer.text = String.format("Correct: %s", guess.text)
+            // DEBUG
+
             guess.setBackgroundColor(resources.getColor(R.color.answerCorrect))
-            LOADING = true
+            ANIMATION = true
             Handler(Looper.getMainLooper()).postDelayed({
-                this.generateMathProblem()
+                if (TOTAL > PROBLEM){
+                    WRONG_GUESS = arrayOf(false, false, false, false)
+                    this.generateMathProblem()
+                } else {
+                    finalDialog()
+                }
             }, 1000)
         } else {
+            if (guess.id == R.id.ans1 && !WRONG_GUESS[0]){
+                WRONG += 1
+                WRONG_GUESS[0] = true
+            } else if (guess.id == R.id.ans2 && !WRONG_GUESS[1]){
+                WRONG += 1
+                WRONG_GUESS[1] = true
+            } else if (guess.id == R.id.ans3 && !WRONG_GUESS[2]){
+                WRONG += 1
+                WRONG_GUESS[2] = true
+            } else if (guess.id == R.id.ans4 && !WRONG_GUESS[3]){
+                WRONG += 1
+                WRONG_GUESS[3] = true
+            }
+
+            // DEBUG
             answer.text = String.format("Not correct: %s", guess.text)
+            // DEBUG
+
+            wrongCounter.text = String.format("%s %d", resources.getString(R.string.wrong_counter), WRONG)
             guess.setBackgroundColor(resources.getColor(R.color.answerWrong))
         }
     }
 
     override fun onBackPressed() {
         AlertDialog.Builder(this)
-            .setTitle(this.resources.getString(R.string.dialog_title))
-            .setMessage(this.resources.getString(R.string.dialog_text))
-            .setPositiveButton(this.resources.getString(R.string.dialog_yes)) { _, _ ->
+            .setTitle(this.resources.getString(R.string.dialog_return_title))
+            .setMessage(this.resources.getString(R.string.dialog_return_text))
+            .setPositiveButton(resources.getString(R.string.dialog_yes)) { _, _ ->
                 super.onBackPressed()
             }
             .setNegativeButton(this.resources.getString(R.string.dialog_no)) { dialog, _ ->
                 dialog.dismiss()
+            }
+            .show()
+    }
+
+    fun finalDialog(){
+        AlertDialog.Builder(this)
+            .setTitle(this.resources.getString(R.string.dialog_final_title))
+            .setMessage(
+                String.format("%s %d\n%s %d",
+                    this.resources.getString(R.string.dialog_final_text1), TOTAL,
+                    this.resources.getString(R.string.dialog_final_text2), WRONG))
+            .setPositiveButton(resources.getString(R.string.dialog_ok)) { dialog, _ ->
+                super.onBackPressed()
             }
             .show()
     }
