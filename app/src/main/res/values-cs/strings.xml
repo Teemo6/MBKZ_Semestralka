@@ -5,8 +5,9 @@
     <!-- Menu -->
     <string name="menu_title">Procvičování matematiky</string>
     <string name="menu_start">Spustit</string>
-    <string name="menu_rules">Pravidla</string>
+    <string name="menu_challenge">Výzva</string>
     <string name="menu_settings">Nastavení</string>
+    <string name="menu_about">O aplikaci</string>
 
     <!-- Exercise -->
     <string name="problem_counter">Příklad:</string>
@@ -23,6 +24,18 @@
     <string name="dialog_no">Ne</string>
     <string name="dialog_ok">Ok</string>
 
+    <!-- Challenge -->
+    <string name="input_result">Výsledek</string>
+    <string name="input_send">Odeslat</string>
+    <string name="score_counter">Skóre:</string>
+
+    <string name="score_result">Konečné skóre:</string>
+    <string name="score_1">Nic moc…</string>
+    <string name="score_2">Jste na dobré cestě.</string>
+    <string name="score_3">Dobrá práce!</string>
+    <string name="score_4">VELMI pěkné!!</string>
+    <string name="score_5">Jste matematický génius!!!</string>
+
     <!-- Settings -->
     <string name="settings_theme">Barevné provedení</string>
     <string-array name="settings_theme_select">
@@ -36,7 +49,7 @@
         <item>Angličtina (EN)</item>
         <item>Čeština (CZ)</item>
     </string-array>
-    <string name="settings_position">Pozice problému</string>
+    <string name="settings_position">Pozice otazníku</string>
 
     <string name="settings_save">Uložit preference</string>
     <string name="settings_default">Výchozí hodnoty</string>

@@ -85,7 +85,7 @@
         app:layout_constraintGuide_percent="0.95" />
 
     <Button
-        android:id="@+id/start_exercise"
+        android:id="@+id/menu_launch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -99,19 +99,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_3" />
 
     <Button
-        android:id="@+id/start_rules"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/menu_rules"
-        android:textSize="20sp"
-        app:cornerRadius="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_5"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_7"
-        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_3"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_4" />
-
-    <Button
-        android:id="@+id/start_settings"
+        android:id="@+id/menu_settings"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:onClick="openSettings"
@@ -122,6 +110,19 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_7"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_3"
         app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_5" />
+
+    <Button
+        android:id="@+id/menu_about"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="openAbout"
+        android:text="@string/menu_about"
+        android:textSize="20sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_75"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_7"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_3"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_6" />
 
     <TextView
         android:id="@+id/main_title"
@@ -134,4 +135,17 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_95"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
         app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_2" />
+
+    <Button
+        android:id="@+id/menu_challenge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="openChallenge"
+        android:text="@string/menu_challenge"
+        android:textSize="20sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_7"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_3"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

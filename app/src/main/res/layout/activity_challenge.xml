@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Exercise">
+    tools:context=".Challenge">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_horizontal_1"
@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.95" />
+        app:layout_constraintGuide_percent="0.65" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_vertical_05"
@@ -77,54 +77,6 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.95" />
 
-    <Button
-        android:id="@+id/ans1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:onClick="guess"
-        android:textSize="40sp"
-        app:cornerRadius="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_85"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_48"
-        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_75" />
-
-    <Button
-        android:id="@+id/ans2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:onClick="guess"
-        android:textSize="40sp"
-        app:cornerRadius="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_85"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_95"
-        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_52"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_75" />
-
-    <Button
-        android:id="@+id/ans3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:onClick="guess"
-        android:textSize="40sp"
-        app:cornerRadius="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_95"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_48"
-        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_85" />
-
-    <Button
-        android:id="@+id/ans4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:onClick="guess"
-        android:textSize="40sp"
-        app:cornerRadius="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_95"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_95"
-        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_52"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_85" />
-
     <TextView
         android:id="@+id/math"
         android:layout_width="0dp"
@@ -156,23 +108,54 @@
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_5" />
 
     <TextView
-        android:id="@+id/problem"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_5"
-        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_1" />
-
-    <TextView
         android:id="@+id/score"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_95"
-        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
         app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_1" />
+
+    <EditText
+        android:id="@+id/input_answer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_85"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_95"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_75"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/input_result"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_75"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_95" />
+
+    <Button
+        android:id="@+id/input_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="sendAnswer"
+        android:text="@string/input_send"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_75"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_95"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_5"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_95" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

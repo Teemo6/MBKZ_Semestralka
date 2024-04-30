@@ -28,8 +28,15 @@ class Exercise : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exercise)
 
+        // Reset variables
+        SOLUTION = -1
+        ANIMATION = false
+        PROBLEM = 0
+        WRONG = 0
+        WRONG_GUESS = arrayOf(false, false, false ,false)
+
         // Setup wrong counter
-        val wrongCounter: TextView = findViewById(R.id.wrong)
+        val wrongCounter: TextView = findViewById(R.id.score)
         wrongCounter.text = String.format("%s %d", resources.getString(R.string.wrong_counter), 0)
 
         // Start generating math problems
@@ -126,7 +133,7 @@ class Exercise : AppCompatActivity() {
 
         val guess: Button = v as Button
         val answer: TextView = findViewById(R.id.answer)
-        val wrongCounter: TextView = findViewById(R.id.wrong)
+        val wrongCounter: TextView = findViewById(R.id.score)
 
         if (guess.text == "$SOLUTION"){
             // DEBUG

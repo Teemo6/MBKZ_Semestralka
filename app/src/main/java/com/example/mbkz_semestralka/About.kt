@@ -1,38 +1,20 @@
 package com.example.mbkz_semestralka
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class Menu : AppCompatActivity() {
+class About : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_menu)
+        setContentView(R.layout.activity_about)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-    }
-
-    fun openExercise(v: View){
-        startActivity(Intent(this, Exercise::class.java))
-    }
-
-    fun openChallenge(v: View){
-        startActivity(Intent(this, Challenge::class.java))
-    }
-
-    fun openSettings(v: View){
-        startActivity(Intent(this, Settings::class.java))
-    }
-
-    fun openAbout(v: View){
-        startActivity(Intent(this, About::class.java))
     }
 }
