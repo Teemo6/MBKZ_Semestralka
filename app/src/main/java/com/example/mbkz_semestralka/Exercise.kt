@@ -124,13 +124,12 @@ class Exercise : AppCompatActivity() {
 
     override fun onBackPressed() {
         AlertDialog.Builder(this)
-            .setTitle("Návrat do menu")
-            .setMessage("Opravdu se chcete vrátit do menu?")
-            .setPositiveButton("Ano") { dialog, _ ->
-                // Perform any necessary cleanup or exit actions
+            .setTitle(this.resources.getString(R.string.dialog_title))
+            .setMessage(this.resources.getString(R.string.dialog_text))
+            .setPositiveButton(this.resources.getString(R.string.dialog_yes)) { _, _ ->
                 super.onBackPressed()
             }
-            .setNegativeButton("Ne") { dialog, _ ->
+            .setNegativeButton(this.resources.getString(R.string.dialog_no)) { dialog, _ ->
                 dialog.dismiss()
             }
             .show()

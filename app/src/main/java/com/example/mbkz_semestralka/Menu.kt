@@ -24,6 +24,10 @@ class Menu : AppCompatActivity() {
         startActivity(Intent(this, Exercise::class.java))
     }
 
+    fun openRules(v: View){
+        startActivity(Intent(this, Settings::class.java))
+    }
+
     fun openSettings(v: View){
         startActivity(Intent(this, Settings::class.java))
     }

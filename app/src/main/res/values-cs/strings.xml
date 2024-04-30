@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Procvičování matematiky</string>
+
+    <!-- Menu -->
+    <string name="menu_title">Procvičování matematiky</string>
+    <string name="menu_start">Spustit</string>
+    <string name="menu_rules">Pravidla</string>
+    <string name="menu_settings">Nastavení</string>
+
+    <!-- Exercise -->
+    <string name="dialog_title">Návrat do menu</string>
+    <string name="dialog_text">Opravdu se chcete vrátit do menu?</string>
+    <string name="dialog_yes">Ano</string>
+    <string name="dialog_no">Ne</string>
+
+    <!-- Settings -->
+    <string name="settings_theme">Barevné provedení</string>
+    <string-array name="settings_theme_select">
+        <item>Podle systému</item>
+        <item>Světlé</item>
+        <item>Tmavé</item>
+    </string-array>
+    <string name="settings_language">Jazyk</string>
+    <string-array name="settings_language_select">
+        <item>Podle systému</item>
+        <item>Angličtina (EN)</item>
+        <item>Čeština (CZ)</item>
+    </string-array>
+    <string name="settings_position">Pozice problému</string>
+
+    <string name="settings_save">Uložit preference</string>
+    <string name="settings_default">Výchozí hodnoty</string>
+</resources>

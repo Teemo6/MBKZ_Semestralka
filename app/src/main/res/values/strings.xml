@@ -1,8 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MBKZ_Semestralka</string>
+    <string name="app_name">Math exercises</string>
 
-    <string name="start">Spustit</string>
-    <string name="rules">Pravidla</string>
-    <string name="settings">Nastavení</string>
-    <string name="main_title">Procvičování matematiky</string>
+    <!-- Menu -->
+    <string name="menu_title">Math exercises</string>
+    <string name="menu_start">Launch</string>
+    <string name="menu_rules">Rules</string>
+    <string name="menu_settings">Settings</string>
+
+    <!-- Exercise -->
+    <string name="dialog_title">Return to the menu</string>
+    <string name="dialog_text">Do you really wish to return to the menu?</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+
+    <!-- Settings -->
+    <string name="settings_theme">Theme</string>
+    <string-array name="settings_theme_select">
+        <item>System</item>
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
+    <string name="settings_language">Language</string>
+    <string-array name="settings_language_select">
+        <item>System</item>
+        <item>English (EN)</item>
+        <item>Czech (CZ)</item>
+    </string-array>
+    <string name="settings_position">Problem position</string>
+
+    <string name="settings_save">Save preferences</string>
+    <string name="settings_default">Default values</string>
 </resources>
