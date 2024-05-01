@@ -62,6 +62,13 @@
     <string name="settings_save">Save preferences</string>
     <string name="settings_default">Default values</string>
 
+    <string name="input_error_title">Invalid values</string>
+    <string name="input_error_position">You must enable at least one unknown value position</string>
+    <string name="input_error_operation">You must enable at least one operation</string>
+    <string name="input_error_problems">Problem count cannot be less than 1</string>
+    <string name="input_error_minmax">Minimum cannot be greater than maximum</string>
+    <string name="input_error_minmax2">Range between minimum and maximum must be at least 3</string>
+
     <!-- About -->
     <string name="about_name">Štěpán Faragula, 2024</string>
     <string name="about_project">Seminar work KIV/MBKZ</string>

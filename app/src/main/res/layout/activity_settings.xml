@@ -171,7 +171,7 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:text="@string/settings_language"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1"
@@ -182,7 +182,7 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:text="@string/settings_theme"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_15"
@@ -193,15 +193,14 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:text="@string/settings_position"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_3"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_5"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_2" />
 
     <Spinner
         android:id="@+id/lang_spinner"
@@ -271,6 +270,7 @@
         android:id="@+id/settings_save"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="savePreferences"
         android:text="@string/settings_save"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -285,6 +285,7 @@
         android:id="@+id/settings_default"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="saveDefaultPreferences"
         android:text="@string/settings_default"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -298,12 +299,12 @@
     <TextView
         android:id="@+id/textView8"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:text="@string/settings_operations"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_4"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_5"
-        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
         app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_3" />
 
@@ -358,7 +359,7 @@
     <TextView
         android:id="@+id/textView11"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:text="@string/settings_range_1"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_65"
@@ -369,7 +370,7 @@
     <TextView
         android:id="@+id/textView12"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:text="@string/settings_range_2"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_7"
@@ -380,7 +381,7 @@
     <TextView
         android:id="@+id/textView13"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:text="@string/settings_count"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_5"
@@ -461,7 +462,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_65" />
 
     <EditText
-        android:id="@+id/problem_count"
+        android:id="@+id/problems"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:ems="4"
@@ -475,7 +476,7 @@
     <TextView
         android:id="@+id/textView10"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:text="@string/settings_debug"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_8"

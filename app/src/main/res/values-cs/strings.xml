@@ -62,6 +62,13 @@
     <string name="settings_save">Uložit preference</string>
     <string name="settings_default">Výchozí hodnoty</string>
 
+    <string name="input_error_title">Neplatné hodnoty</string>
+    <string name="input_error_position">Musíte povolit alespoň jednu pozici neznámé hodnoty</string>
+    <string name="input_error_operation">Musíte povolit alespoň jednu matematickou operaci</string>
+    <string name="input_error_problems">Počet příkladů nesmí být menší než 1</string>
+    <string name="input_error_minmax">Minimum nesmí být větší než maximum</string>
+    <string name="input_error_minmax2">Rozsah mezi minimem a maximem musí být alespoň 3</string>
+
     <!-- About -->
     <string name="about_name">Štěpán Faragula, 2024</string>
     <string name="about_project">Semestrální práce KIV/MBKZ</string>

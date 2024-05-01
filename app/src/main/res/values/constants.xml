@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Challenge -->
+    <integer name="score1">2</integer>
+    <integer name="score2">5</integer>
+    <integer name="score3">10</integer>
+    <integer name="score4">20</integer>
+
+    <!-- SharedPref file name -->
+    <string name="shared_pref" translatable="false">matematikaMBKZ</string>
+
+    <!-- SharedPref value identifier -->
+    <string name="position1" translatable="false">position1</string>
+    <string name="position2" translatable="false">position2</string>
+    <string name="position3" translatable="false">position3</string>
+
+    <string name="operation1" translatable="false">operation1</string>
+    <string name="operation2" translatable="false">operation2</string>
+    <string name="operation3" translatable="false">operation3</string>
+    <string name="operation4" translatable="false">operation4</string>
+
+    <string name="problems" translatable="false">problems</string>
+
+    <string name="min1" translatable="false">min1</string>
+    <string name="max1" translatable="false">max1</string>
+    <string name="min2" translatable="false">min2</string>
+    <string name="max2" translatable="false">max2</string>
+
+    <string name="debug" translatable="false">debug</string>
+
+    <!-- SharedPref default values -->
+    <bool name="position1_val">true</bool>
+    <bool name="position2_val">true</bool>
+    <bool name="position3_val">true</bool>
+
+    <bool name="operation1_val">true</bool>
+    <bool name="operation2_val">true</bool>
+    <bool name="operation3_val">true</bool>
+    <bool name="operation4_val">true</bool>
+
+    <integer name="problems_val">5</integer>
+
+    <integer name="min1_val">0</integer>
+    <integer name="max1_val">100</integer>
+    <integer name="min2_val">0</integer>
+    <integer name="max2_val">10</integer>
+
+    <bool name="debug_val">false</bool>
+</resources>
