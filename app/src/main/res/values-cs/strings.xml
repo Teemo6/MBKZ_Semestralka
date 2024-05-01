@@ -50,13 +50,14 @@
         <item>Čeština (CZ)</item>
     </string-array>
 
-    <string name="settings_position">Pozice otazníku</string>
+    <string name="settings_position">Pozice neznámé hodnoty</string>
     <string name="settings_operations">Povolené operace</string>
     <string name="settings_range_1">Rozsah +, -</string>
     <string name="settings_range_2">Rozsah *, /</string>
     <string name="settings_range_min">min</string>
     <string name="settings_range_max">max</string>
     <string name="settings_count">Počet příkladů</string>
+    <string name="settings_debug">Ladící výpis</string>
 
     <string name="settings_save">Uložit preference</string>
     <string name="settings_default">Výchozí hodnoty</string>

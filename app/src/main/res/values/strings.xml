@@ -50,13 +50,14 @@
         <item>Czech (CZ)</item>
     </string-array>
 
-    <string name="settings_position">Question mark position</string>
+    <string name="settings_position">Unknown value position</string>
     <string name="settings_operations">Allowed operations</string>
     <string name="settings_range_1">+, - range</string>
     <string name="settings_range_2">*, / range</string>
     <string name="settings_range_min">min</string>
     <string name="settings_range_max">max</string>
     <string name="settings_count">Problem count</string>
+    <string name="settings_debug">Debug output</string>
 
     <string name="settings_save">Save preferences</string>
     <string name="settings_default">Default values</string>
