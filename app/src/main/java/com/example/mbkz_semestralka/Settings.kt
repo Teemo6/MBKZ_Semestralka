@@ -16,9 +16,6 @@ class Settings : AppCompatActivity() {
 
         loadPreferences()
     }
-    private fun setAppLocale(language: String) {
-
-    }
 
     fun savePreferences(v: View){
         val preferences : SharedPreferences.Editor = getSharedPreferences(resources.getString(R.string.shared_pref), 0).edit()
@@ -140,7 +137,7 @@ class Settings : AppCompatActivity() {
         loadPreferences()
     }
 
-    fun showInputErrorDialog(message: String) {
+    private fun showInputErrorDialog(message: String) {
         AlertDialog.Builder(this)
             .setTitle(resources.getString(R.string.dialog_return_title))
             .setMessage(message)

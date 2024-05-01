@@ -3,7 +3,7 @@
     <string name="app_name">Math</string>
 
     <!-- Menu -->
-    <string name="menu_title">Math exercises</string>
+    <string name="menu_title">Math exercise</string>
     <string name="menu_start">Launch</string>
     <string name="menu_challenge">Challenge</string>
     <string name="menu_settings">Settings</string>
@@ -51,9 +51,9 @@
     </string-array>
 
     <string name="settings_position">Unknown value position</string>
-    <string name="settings_operations">Allowed operations</string>
-    <string name="settings_range_1">+, - range</string>
-    <string name="settings_range_2">*, / range</string>
+    <string name="settings_operations">Allowed operation</string>
+    <string name="settings_range_1">Range of +, -</string>
+    <string name="settings_range_2">Range of *, /</string>
     <string name="settings_range_min">min</string>
     <string name="settings_range_max">max</string>
     <string name="settings_count">Problem count</string>

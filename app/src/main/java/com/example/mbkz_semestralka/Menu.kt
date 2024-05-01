@@ -33,7 +33,7 @@ class Menu : AppCompatActivity() {
         startActivity(Intent(this, About::class.java))
     }
 
-    fun saveDefaultPreferences(){
+    private fun saveDefaultPreferences(){
         val preferences : SharedPreferences.Editor = getSharedPreferences(resources.getString(R.string.shared_pref), 0).edit()
 
         preferences.putBoolean(resources.getString(R.string.position1), resources.getBoolean(R.bool.position1_val))
