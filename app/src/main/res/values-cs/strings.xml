@@ -43,12 +43,6 @@
         <item>Světlé</item>
         <item>Tmavé</item>
     </string-array>
-    <string name="settings_language">Jazyk</string>
-    <string-array name="settings_language_select">
-        <item>Podle systému</item>
-        <item>Angličtina (EN)</item>
-        <item>Čeština (CZ)</item>
-    </string-array>
 
     <string name="settings_position">Pozice neznámé hodnoty</string>
     <string name="settings_operations">Povolené operace</string>
@@ -70,6 +64,7 @@
     <string name="input_error_minmax2">Rozsah mezi minimem a maximem musí být alespoň 3</string>
 
     <!-- About -->
-    <string name="about_name">Štěpán Faragula, 2024</string>
     <string name="about_project">Semestrální práce KIV/MBKZ</string>
+    <string name="about_name">Štěpán Faragula, 2024</string>
+    <string name="about_version">Verze 1.0.0</string>
 </resources>

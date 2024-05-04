@@ -6,13 +6,20 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.CheckBox
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 
 class Settings : AppCompatActivity() {
+    private var CURRENT_THEME = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
+
+        // Save for future comparison
+        CURRENT_THEME = findViewById<Spinner>(R.id.theme).selectedItemPosition
 
         loadPreferences()
     }
@@ -21,6 +28,8 @@ class Settings : AppCompatActivity() {
         val preferences : SharedPreferences.Editor = getSharedPreferences(resources.getString(R.string.shared_pref), 0).edit()
 
         // Read values
+        val theme = findViewById<Spinner>(R.id.theme).selectedItemPosition
+
         val pos1 = findViewById<CheckBox>(R.id.position1).isChecked
         val pos2 = findViewById<CheckBox>(R.id.position2).isChecked
         val pos3 = findViewById<CheckBox>(R.id.position3).isChecked
@@ -66,6 +75,8 @@ class Settings : AppCompatActivity() {
         }
 
         // Write values
+        preferences.putInt(resources.getString(R.string.theme), theme)
+
         preferences.putBoolean(resources.getString(R.string.position1), pos1)
         preferences.putBoolean(resources.getString(R.string.position2), pos2)
         preferences.putBoolean(resources.getString(R.string.position3), pos3)
@@ -84,6 +95,16 @@ class Settings : AppCompatActivity() {
 
         preferences.putBoolean(resources.getString(R.string.debug), debug)
 
+        // Change theme only when necessary (because it is expensive)
+        if (theme != CURRENT_THEME) {
+            when (theme) {
+                1 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                2 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                else -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+            }
+        }
+
+        // Apply to SharedPref
         preferences.apply()
 
         // Go to menu
@@ -92,6 +113,8 @@ class Settings : AppCompatActivity() {
 
     private fun loadPreferences(){
         val preferences : SharedPreferences = getSharedPreferences(resources.getString(R.string.shared_pref), 0)
+
+        findViewById<Spinner>(R.id.theme).setSelection(preferences.getInt(resources.getString(R.string.theme), resources.getInteger(R.integer.theme_val)))
 
         findViewById<CheckBox>(R.id.position1).setChecked(preferences.getBoolean(resources.getString(R.string.position1), resources.getBoolean(R.bool.position1_val)))
         findViewById<CheckBox>(R.id.position2).setChecked(preferences.getBoolean(resources.getString(R.string.position2), resources.getBoolean(R.bool.position2_val)))
@@ -114,6 +137,8 @@ class Settings : AppCompatActivity() {
 
     fun saveDefaultPreferences(v: View){
         val preferences : SharedPreferences.Editor = getSharedPreferences(resources.getString(R.string.shared_pref), 0).edit()
+
+        preferences.putInt(resources.getString(R.string.theme), resources.getInteger(R.integer.theme_val))
 
         preferences.putBoolean(resources.getString(R.string.position1), resources.getBoolean(R.bool.position1_val))
         preferences.putBoolean(resources.getString(R.string.position2), resources.getBoolean(R.bool.position2_val))

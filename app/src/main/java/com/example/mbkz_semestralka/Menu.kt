@@ -5,16 +5,30 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 
 class Menu : AppCompatActivity() {
+    var LOADED_THEME = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
         // Create preferences if not exist
-        if (!getSharedPreferences(resources.getString(R.string.shared_pref), 0).contains(resources.getString(R.string.position1))) {
+        if (!getSharedPreferences(resources.getString(R.string.shared_pref), 0).contains(resources.getString(R.string.theme))) {
             saveDefaultPreferences()
+        } else {
+            if (!LOADED_THEME) {
+                println("LOADED_THEME!")
+                when (getSharedPreferences(resources.getString(R.string.shared_pref), 0).getInt(resources.getString(R.string.theme), resources.getInteger(R.integer.theme_val))) {
+                    1 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    2 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    else -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+                }
+            }
         }
+
+        // Prevents loading theme after first load
+        LOADED_THEME = true
     }
 
     fun openExercise(v: View){
@@ -35,6 +49,8 @@ class Menu : AppCompatActivity() {
 
     private fun saveDefaultPreferences(){
         val preferences : SharedPreferences.Editor = getSharedPreferences(resources.getString(R.string.shared_pref), 0).edit()
+
+        preferences.putInt(resources.getString(R.string.theme), resources.getInteger(R.integer.theme_val))
 
         preferences.putBoolean(resources.getString(R.string.position1), resources.getBoolean(R.bool.position1_val))
         preferences.putBoolean(resources.getString(R.string.position2), resources.getBoolean(R.bool.position2_val))
