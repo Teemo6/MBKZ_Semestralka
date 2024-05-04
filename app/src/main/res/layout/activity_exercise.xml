@@ -134,7 +134,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:textSize="55sp"
+        android:textSize="50sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_95"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
         app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_15" />

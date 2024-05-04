@@ -160,7 +160,7 @@ class Exercise : AppCompatActivity() {
                 } else {
                     showFinalDialog()
                 }
-            }, 1500)
+            }, 1000)
         } else {
             if (guess.id == R.id.ans1 && !wrongGuess[0]){
                 wrong += 1

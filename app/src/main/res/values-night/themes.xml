@@ -9,6 +9,9 @@
         <item name="android:textColorPrimaryInverse">@color/white</item>
         <item name="android:textColorSecondaryInverse">@color/white</item>
         <item name="android:textColorTertiaryInverse">@color/white</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
 </resources>

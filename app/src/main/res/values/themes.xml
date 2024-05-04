@@ -1,6 +1,9 @@
 <resources>
     <style name="Base.Theme.MBKZ_Semestralka" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="Theme.MBKZ_Semestralka" parent="Base.Theme.MBKZ_Semestralka" />

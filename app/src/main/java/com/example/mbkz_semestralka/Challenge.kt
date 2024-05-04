@@ -2,9 +2,13 @@ package com.example.mbkz_semestralka
 
 import android.app.AlertDialog
 import android.content.SharedPreferences
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import kotlin.random.Random
@@ -21,6 +25,7 @@ class Challenge : AppCompatActivity() {
     private var solution = 0
     private var score = 0
     private var lost = false
+    private var animating = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +36,7 @@ class Challenge : AppCompatActivity() {
         solution = -1
         score = 0
         lost = false
+        animating = false
 
         // Start generating math problems
         generateMathProblem()
@@ -41,6 +47,12 @@ class Challenge : AppCompatActivity() {
         var num1 = 0
         var num2 = 0
         var ans = 0
+
+        // Clear previous answer
+        val result = findViewById<Button>(R.id.result)
+        result.text = ""
+        result.setBackgroundColor(Color.TRANSPARENT)
+        animating = false
 
         // Generate new problem
         val operator = OPERATORS[Random.nextInt(OPERATORS.size)]
@@ -105,19 +117,40 @@ class Challenge : AppCompatActivity() {
     }
 
     fun sendAnswer(v: View){
-        val answer = findViewById<EditText>(R.id.input_answer)
+        // User lost
+        if (lost){
+            finalDialog()
+        }
 
-        if (answer.text.toString() == "" || answer.text.toString() == "-"){
+        // Animation timer
+        if (animating){
             return
         }
 
-        if (answer.text.toString() == "$solution" && !lost){
-            score++
-            answer.text.clear()
-            generateMathProblem()
+        val input = findViewById<EditText>(R.id.input)
+        val result = findViewById<TextView>(R.id.result)
+
+        if (input.text.toString() == "" || input.text.toString() == "-"){
+            return
+        }
+
+        if (input.text.toString() == "$solution"){
+            result.setBackgroundColor(resources.getColor(R.color.answerCorrect))
+            result.text = "$solution"
+            animating = true
+            Handler(Looper.getMainLooper()).postDelayed({
+                score++
+                input.text.clear()
+                generateMathProblem()
+            }, 1000)
         } else {
+            result.setBackgroundColor(resources.getColor(R.color.answerWrong))
+            result.text = "$solution"
+            animating = true
             lost = true
-            finalDialog()
+            Handler(Looper.getMainLooper()).postDelayed({
+                finalDialog()
+            }, 1000)
         }
     }
 

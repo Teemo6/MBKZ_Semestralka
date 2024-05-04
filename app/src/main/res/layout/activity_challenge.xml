@@ -8,18 +8,18 @@
     tools:context=".Challenge">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_horizontal_05"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_horizontal_15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_156"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_horizontal_75"
@@ -41,6 +41,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_995"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.63" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_vertical_05"
@@ -82,10 +89,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:textSize="55sp"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_156"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_95"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_15" />
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_15"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/example"
@@ -103,12 +112,13 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_995"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_95"
-        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_05" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05" />
 
     <EditText
-        android:id="@+id/input_answer"
+        android:id="@+id/input"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:ems="10"
@@ -148,5 +158,20 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_95"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_5"
         app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_95" />
+
+    <Button
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_995"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_95"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_05"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_156"
+        app:layout_constraintVertical_bias="0.19999999" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
