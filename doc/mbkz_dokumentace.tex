@@ -95,9 +95,9 @@ bottom=30mm,
 	\chapter{Zadání}
 	Cílem této semestrální práce je vytvořit aplikaci na procvičování matematiky. Přestože již existují podobné aplikace, zatím se mi nepodařilo najít takovou, která by podporovala počítání se zápornými čísly. Zadání jsem si tedy zvolil vzhledem k osobním potřebám.
 	
-	Cvičení bude fungovat na jednoduchém principu. Uživateli bude představen náhodně vygenerovaný příklad, ve kterém bude jedna neznámá hodnota. Následně bude muset uhodnout správnou hodnotu, a to buď výběrem ze 4 možností, nebo vlastnoručním vyplněním. Jeden z těchto módů by mohl být pojat ve stylu hry, přičemž se bude navyšovat skóre podle vypočítaných příkladů. 
+	Cvičení bude fungovat na jednoduchém principu. Uživateli bude představen náhodně vygenerovaný příklad, ve kterém bude jedna neznámá hodnota. Následně bude muset uhodnout správnou hodnotu, a to buď výběrem ze 4 možností, nebo vlastnoručním vyplněním čísla. Jeden z těchto módů by mohl být pojat ve stylu hry, přičemž se bude navyšovat skóre podle správně vypočítaných příkladů. 
 	
-	Při vývoji bude kladen důraz na přizpůsobitelnosti procvičování. Aplikace bude umožňovat měnit volbu rozsahu, ve kterém se mohou čísla vyskytovat, spolu s dalšími možnostmi.
+	Při vývoji bude kladen důraz na přizpůsobitelnost parametrů. Aplikace bude umět měnit volbu rozsahu, ve kterém se mohou čísla vyskytovat, spolu s dalšími možnostmi.
 
 
 
@@ -107,7 +107,7 @@ bottom=30mm,
 	\chapter{Programátorská dokumentace}
 	Aplikace byla vyvíjena pro platformu Android s úrovní API 24 a vyšší. K tomu bylo použito vývojové prostředí Android Studio.
 
-	Bylo implementováno celkem 5 tříd \texttt{Activity} s vlastním \texttt{ContentView}. Názvy tříd jsou výstižné, ve zkratce se jednotlivé aktivity zabývají následujícím:
+	Bylo implementováno celkem 5 tříd \texttt{Activity}, každá s vlastním rozhraním \texttt{ContentView}. Ve zkratce se jednotlivé aktivity zabývají následujícím:
 	\begin{itemize}
 		\item \texttt{Menu} - vstupní bod programu
 		\item \texttt{Exercise} - první mód, 4 možné odpovědi
@@ -116,11 +116,12 @@ bottom=30mm,
 		\item \texttt{About} - stručné informace o aplikaci
 	\end{itemize}
 
-	U náhodného generování příkladů se nejprve zvolí matematická operace a jedno náhodné číslo z rozsahu. Další dvě čísla jsou dopočítána. Následně se zvolí, které z čísel by~mělo představovat neznámou hodnotu. V prvním módu se ještě vypočítají 3 nesprávné hodnoty, které jsou také ukázány uživateli.
+	U náhodného generování příkladů se nejprve zvolí matematická operace a jedno náhodné číslo z rozsahu. Další dvě čísla jsou dopočítána. Následně se zvolí, které z čísel by~mělo představovat neznámou hodnotu. V prvním módu se ještě vypočítají 3 nesprávné hodnoty, které jsou ukázány spolu se správnou. U násobení a dělení se nevyskytují příklady obsahující 0. Je to kvůli nejednoznačnému výsledku u násobení a neplatné operace u~dělení.
 	
-	Nastavení se ukládá do \texttt{SharedPreferences}. Na začátku každého cvičení se přečtou uložená data. V případě kdy neexistují, načtou se výchozí hodnoty.
+	Nastavení se ukládá do \texttt{SharedPreferences}. Na začátku každého cvičení se přečtou tato uložená data. V případě, kdy neexistují, načtou se výchozí hodnoty. U rozsahů matematických operací je nutné zadat taková čísla, aby mezi nimi byla vzdálenost alespoň 3, protože to algoritmus předpokládá.
 	
-	Aplikace také podporuje zobrazení anglické a české lokalizace spolu s barevným schématem podle uživatelova systému. 
+	Aplikace také podporuje zobrazení uživatelského rozhraní v anglickém nebo českém jazyce spolu s barevným schématem podle nastavení systému Android. 
+	
 
 	% ---------------------	
 	% Uživatelská dokumentace
@@ -137,7 +138,7 @@ bottom=30mm,
 	
 	\newpage
 	\section{Procvičování}
-	Uživateli se zobrazí náhodně vygenerovaný příklad spolu se 4 různými možnostmi. Další příklad se zobrazí po vybrání správného výsledku, přičemž se špatné odpovědi podbarví červeně. Na výběr je neomezený čas a po uhodnutí výsledku následuje vteřinová prodleva, která jej zvýrazní. Po určitém počtu příkladů se zobrazí hláška shrnující průběh cvičení. Po stisknutí tlačítka zpět na mobilu se zobrazí dialog, který musí být potvrzen.
+	Uživateli se zobrazí náhodně vygenerovaný příklad spolu se 4 různými možnostmi. Další příklad se zobrazí po vybrání správného výsledku, přičemž se špatné odpovědi podbarví červeně. Na výběr je neomezený čas a po uhodnutí výsledku následuje vteřinová prodleva, která jej zvýrazní. Po určitém počtu příkladů se zobrazí hláška shrnující průběh cvičení. Po stisknutí tlačítka zpět na mobilu se zobrazí dialog, který musí být znovu potvrzen. Uživatel tak okamžitě neztratí postup při jeho nechtěném stisknutí.
 	
 	\begin{figure}[ht]
 		\centering
@@ -156,7 +157,7 @@ bottom=30mm,
 	
 	\newpage
 	\section{Výzva}
-	U výzvy musí uživatel zadávat všechny výsledky ručně. Nad příkladem je zobrazeno skóre a jedná se o počet doposud správně vypočítaných příkladů. Jakmile je zadána špatná odpověď, výzva končí. Podle dosaženého skóre je zobrazena jedna z 5 vět, která by měla uživatele dále motivovat.
+	U výzvy musí uživatel zadávat všechny výsledky ručně. Skóre představuje počet doposud správně vypočítaných příkladů. Po odeslání čísla se na jednu vteřinu zobrazí barevný čtverec obsahující řešení. Pokud je odpověď špatná, výzva končí. Podle dosaženého skóre je zobrazena jedna z 5 vět, která by měla uživatele motivovat.
 	
 	\begin{figure}[ht]
 		\centering
@@ -175,7 +176,7 @@ bottom=30mm,
 	
 	\newpage
 	\section{Nastavení}
-	Aplikace umožňuje měnit průběh cvičení. Provedené změny se budou týkat obou módů, krom počtu příkladů, který se týká pouze prvního. Je možné měnit, na jaké pozici se bude vyskytovat otazník a jaké operace by měly být procvičovány. Rozsah hodnot operací může být i záporný. Dále je možné zvolit tmavý nebo světlý vzhled aplikace, přičemž ve výchozím nastavení je zvolen podle systému Android. Ladící výpis zobrazuje dva příklady, kde v jednom je otazník a ve druhém ne. Všechny možnosti se ukládají pomocí \texttt{SharedPreferences}. Uživatelský vstup je zabezpečen proti neplatným hodnotám.
+	Aplikace umožňuje měnit průběh cvičení. Provedené změny se budou týkat obou módů. Je možné měnit, na jaké pozici se~bude vyskytovat otazník a jaké operace by měly být procvičovány. Číselný rozsah operací může jít i do záporných hodnot. Dále je možné zvolit tmavý nebo světlý vzhled aplikace. Ve výchozím nastavení je určen systémem Android. Všechny možnosti se ukládají pomocí \texttt{SharedPreferences}. Uživatelský vstup je zabezpečen proti neplatným hodnotám.
 	
 	\begin{figure}[ht]
 		\centering
@@ -217,22 +218,24 @@ bottom=30mm,
 	% Řešené problémy
 	% ---------------------	
 	\chapter{Řešené problémy}
-	Virtuál
-	
-	Lokalizace podle systému
+	Největší obtíž mi dělal virtuální stroj, na kterém jsem testoval aplikaci. Několikrát jsem ho musel reinstalovat a také běžel pomalu. Myslel jsem si, že to je zapříčiněno nevhodným algoritmem, ale potom když jsem spustil aplikaci na reálném zařízení, tak běžela podle představ. Při vývoji jsem proto používal hlavně svůj mobil a virtuál pouze k~testování responzivity a lokalizace rozhraní.
+		
+	Do nastavení jsem chtěl přidat možnost, která by uměla měnit jazyk přímo v~aplikaci. Řešení však nebylo tak přímočaré, jako u barevného schématu, protože mi nešlo určit, jaký jazyk systém preferuje. Potom jsem se dočetl, že tento přístup ani není vhodné implementovat, protože od verze Android 13 je možné zvolit lokalizaci libovolné aplikace v nastavení telefonu\footnote{\url{https://developer.android.com/guide/topics/resources/app-languages}}.
 
+	Se samotným algoritmem, který generuje náhodné příklady, nebyly prakticky žádné problémy. Nejdéle mi trvalo sestavit finální verzi UI v editoru a ukládání/načítání parametrů \texttt{SharedPreferences}.
 
 	% ---------------------	
 	% Testování
 	% ---------------------	
 	\chapter{Testování}
-	Pixel 2, Pixel 8
+	Aplikaci jsem testoval na virtuálních strojích Pixel 8 API 34 a Pixel 2 API 34 spolu se~svým fyzickým zařízením, které má Android 13. Zkoušel jsem očekávaný průběh cvičení, zadávání nevalidních hodnot do nastavení a jeho následné uložení a načtení. Aplikaci jsem také nainstaloval celkem na 3 telefony svých rodinných příslušníků. Ve~všech případech fungovala a vypadala podle očekávání. Její hodnocení bylo pozitivní.
 	
 
 	% ---------------------	
 	% Závěr
 	% ---------------------	
 	\chapter{Závěr}
+	Vytvořená aplikace umožňuje procvičování základních matematických operací. Jsou k~dispozici dva módy. Jeden je určený k opakovanému procvičování a druhý má podobu hry se skórem. Parametry lze měnit v nastavení a načtou se i po vypnutí aplikace. Také je možné měnit barevné schéma a případně i jazyk přes nastavení systému Android. Během testování jsem použil dva různé virtuální stroje a také několik fyzických zařízení. Aplikaci jsem vytvořit zejména pro osobní použití a jsem s ní spokojen.
 	
 	
 	
